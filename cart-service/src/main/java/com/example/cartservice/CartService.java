@@ -12,7 +12,7 @@ public class CartService {
     private final ProductClient productClient;
 
     public CartItem addToCart(Long userId, Long productId, int quantity) {
-        productClient.getProductById(productId); // проверка, что товар существует
+        productClient.getProductById(productId);
         CartItem item = CartItem.builder()
                 .userId(userId)
                 .productId(productId)

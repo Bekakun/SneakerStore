@@ -22,7 +22,7 @@ public class UserService {
         if ("ADMIN".equals(requesterRole)) {
             return userRepository.save(user);
         }
-        // Если нет роли — значит регистрация (открытая)
+
         if (requesterRole == null || requesterRole.isBlank()) {
             user.setRole(com.example.userservice.Role.USER);
             return userRepository.save(user);
